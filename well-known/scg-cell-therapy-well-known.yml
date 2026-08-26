@@ -1,0 +1,35 @@
+generated: '2026-08-26'
+method: probed
+source: live HTTP probes of https://www.scgcell.com (the only host this company operates; no api./developer./docs. subdomain resolves)
+note: >-
+  No /.well-known/ document was served. The origin (Alibaba Cloud Tengine, fronting an
+  Alibaba "smart design mode" site-builder site) answered HTTP 429 Too Many Requests to
+  every /.well-known/* path on repeated attempts across the pass, while ordinary paths on
+  the same host answered normally (/ returned 200, /robots.txt returned 200, /llms.txt and
+  /openapi.json returned the site's own 404 page). No document was ever returned, so NO
+  WellKnown or SecurityTxt pointer is emitted — this file records an absence, not a
+  presence.
+hosts:
+- host: www.scgcell.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 429
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 429
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 429
+    file: null
+  - path: /.well-known/api-catalog
+    status: 429
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 429
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 429
+    file: null
+  - path: /.well-known/agent.json
+    status: 429
+    file: null
